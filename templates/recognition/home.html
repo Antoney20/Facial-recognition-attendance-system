@@ -1,5 +1,6 @@
 {% load static %}
 
+
 <!DOCTYPE html>
 <html>
 
@@ -8,27 +9,29 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Antony-face-recognition system</title>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+    <style>
+        body {
+            background: url('{% static "recognition/img/bg_image.png"%}') no-repeat center center fixed;
+            background-size: cover;
+        }
+    </style>
+
+
+
 </head>
 
-<body class="col-sm-12">
+<body>
 
-    <div  style="background: rgba(0,0,0,0.1);
-    margin-top:3em;
-    margin-bottom:5em;
-    padding-top:1em;
-    padding-bottom:3em;
-    color:#black;
-    border-radius:10px;
-    -webkit-box-shadow: 2px 2px 15px 0px rgba(0, 1, 0, 0.7);
--moz-box-shadow:    2px 2px 15px 0px rgba(0, 1, 0, 0.7);
-box-shadow:         2px 2px 15px 0px rgba(0, 1, 0, 0.7);">
+    <div class="col-lg-12" style="background: rgba(0,0,0,0.6);margin-top:3em;margin-bottom:5em;padding-top:1em;padding-bottom:3em;color:#fff;border-radius:10px;-webkit-box-shadow: 2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+-moz-box-shadow:    2px 2px 15px 0px rgba(0, 3, 0, 0.7);
+box-shadow:         2px 2px 15px 0px rgba(0, 3, 0, 0.7);">
         <div class="col-sm-12">
 
-            <h1 class="text-center section-title" style="margin-bottom:2em">Welcome To Facial Recognition attendance system.</h1>
+            <h1 class="text-center section-title" style="margin-bottom:2em">Attendance System Using Face Recognition.</h1>
         </div>
         <style>
             h4 {
@@ -75,7 +78,7 @@ box-shadow:         2px 2px 15px 0px rgba(0, 1, 0, 0.7);">
         */
         </style>
 
-        <div class="col-sm-10" style="padding-top: 100px;">
+        <div class="col-lg-12" style="padding-top: 100px;">
             {% if messages %} {% for message in messages%}
             <div class="alert alert-{{message.tags}}"> {{message}}
             </div>
@@ -86,32 +89,42 @@ box-shadow:         2px 2px 15px 0px rgba(0, 1, 0, 0.7);">
         <div class="row">
 
 
-            <div class="col-md-4 border-danger" style="padding-left: 220px">
-                <div class = "row">
-                    <div class= "col-sm-3">
+            <div class="col-md-4" style="padding-left: 220px">
                 <a href='{%url "mark-your-attendance" %}'><img src="{% static 'recognition/img/enter.png' %}" class="img-responsive" style="width:300px;height:300px ;" /></a>
-                    </div>
-                <div class="row" style= "margin-top:10px;">
-                    <h1>Mark Your Attendance</h2>
-                </div>
-            </div>
+
             </div>
 
-           
             <div class="col-md-4" style="padding-left: 220px">
-            <div class="row"> 
+                <a href='{%url "mark-your-attendance-out" %}'><img src="{% static 'recognition/img/exit.png' %}" class="img-responsive" style="width:300px;height:300px ;" /></a>
+
+            </div>
+
+            <div class="col-md-4" style="padding-left: 220px">
                 <a href='{%url "login" %}'><img src="{% static 'recognition/img/login.png' %}" class="img-responsive" style="width:300px;height:300px" /></a>
-            </div>
-            <div class="row" style="margin-top:10px;">
-                <h1 class="text-center">Login<h1>
-            </div>
-            </div>
+
+
             </div>
 
 
 
         </div>
+        <div class="row">
 
+
+            <div class="col md-3" style="padding-left: 70px">
+                <h4 class="text-center ">Mark Your Attendance - In</h4>
+            </div>
+            <div class="col md-3" style="padding-left: 70px">
+                <h4 class="text-center ">Mark Your Attendance - Out </h4>
+            </div>
+            ]
+
+            <div class="col md-3" style="padding-left: 70px">
+                <h4 class="text-center ">Log In </h4>
+            </div>
+            ]
+
+        </div>
 
     </div>
 
